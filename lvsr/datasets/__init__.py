@@ -173,8 +173,9 @@ class Data(object):
         return self.get_dataset("train").eos_label
 
     def get_dataset(self, part, add_sources=()):
-        wsj_name_mapping = {"train": "train_si284", "valid": "test_dev93", "test": "test_eval92"}
+        wsj_name_mapping = {"train": "train", "valid": "test", "test": "dev"}
 
+	print fuel.config.data_path
         if not part in self.dataset_cache:
             self.dataset_cache[part] = H5PYAudioDataset(
                 os.path.join(fuel.config.data_path, "wsj.h5"),

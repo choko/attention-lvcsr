@@ -18,7 +18,7 @@ class H5PYAudioDataset(H5PYDataset):
 
     def pretty_print(self, labels):
         labels = self.decode(labels)
-        labels = ''.join((' ' if chr_=='<spc>' else chr_ for chr_ in labels))
+        labels = ' '.join((' ' if chr_=='<spc>' else chr_ for chr_ in labels))
         return labels
 
 
